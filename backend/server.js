@@ -1,15 +1,10 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
+const colors = require("colors");
 const userRoutes = require("./routes/userRoutes");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
-const cors = require("cors");
-
-app.use(
-  cors({
-    origin: "http://localhost:3000",
-  })
-);
+const path = require("path");
 
 dotenv.config();
 connectDB();
@@ -21,19 +16,19 @@ app.use("/api/user", userRoutes);
 
 // ------------------  Deploy ment           ----------------------
 
-// const __dirname1 = path.resolve();
+const __dirname1 = path.resolve();
 
-// if (process.env.NODE_ENV === "productions") {
-//   app.use(express.static(path.join(__dirname1, "/client/build")));
+if (process.env.NODE_ENV === "productions") {
+  app.use(express.static(path.join(__dirname1, "/client/build")));
 
-//   app.get("*", (req, res) => {
-//     res.sendFile(path.resolve(__dirname1, "client", "build", "index.html"));
-//   });
-// } else {
-app.get("/", (request, response) => {
-  response.send("API is Running Sucessfully ");
-});
-
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname1, "client", "build", "index.html"));
+  });
+} else {
+  app.get("/", (request, response) => {
+    response.send("API is Running Sucessfully ");
+  });
+}
 // ------------------  Deploy ment           ----------------------
 
 // Error Handling middlewares
