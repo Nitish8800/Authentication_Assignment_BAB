@@ -1,3 +1,4 @@
+import React, { Component }  from 'react';
 import Home from "./component/Home";
 import Login from "./component/Login";
 import Register from "./component/Register";

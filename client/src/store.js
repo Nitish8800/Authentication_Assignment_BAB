@@ -6,16 +6,18 @@ import {
   userLoginReducer,
   userRegisterReducer,
   userUpdateReducer,
+  allUsersReducer,
 } from "./reducers/userReducers";
 
 const reducer = combineReducers({
   userLogin: userLoginReducer,
   userRegister: userRegisterReducer,
   userUpdate: userUpdateReducer,
+  allUsers: allUsersReducer,
 });
 
 const userInfoFromStorage = localStorage.getItem("userInfo")
-  ? JSON.parse(localStorage.getItem("userInfo"))  
+  ? JSON.parse(localStorage.getItem("userInfo"))
   : null;
 
 const initialState = {

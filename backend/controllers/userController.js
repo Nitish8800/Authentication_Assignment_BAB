@@ -120,4 +120,25 @@ const updateUserProfile = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = { registerUser, authUser, updateUserProfile };
+const getAllUser = asyncHandler(async (req, res) => {
+  const user = await User.find();
+
+  try {
+    if (user) {
+      res.status(200).json({
+        success: true,
+        user,
+      });
+    } else {
+      res.status(404);
+      throw new Error("User Not Found");
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({
+      error: error.message,
+    });
+  }
+});
+
+module.exports = { registerUser, authUser, updateUserProfile, getAllUser };
