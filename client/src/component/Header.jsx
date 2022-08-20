@@ -147,22 +147,7 @@ export default function Header() {
                 <AccountMenu />
               </Typography>
             ) : (
-              <Link
-                to="/login"
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                <Button
-                  size="medium"
-                  variant="contained"
-                  color="secondary"
-                  sx={{ backgroundColor: "red", fontWeight: "bold", m: "5px" }}
-                >
-                  <Login
-                    sx={{ color: "#ffff", fontWeight: "bold", p: "3px" }}
-                  />
-                  Login
-                </Button>
-              </Link>
+              ""
             )}
           </div>
           <div className={classes.sectionMobile}>

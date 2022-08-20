@@ -1,11 +1,11 @@
 import React from "react";
-
+import Header from "./Header";
 
 const Contact = () => {
   return (
     <>
-      <div style={{ margin: "100px" }}>
-        <h1>Contact</h1>
+      <div>
+        <h1 style={{ margin: "100px" }}>Contact</h1>
       </div>
     </>
   );

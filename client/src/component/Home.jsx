@@ -1,7 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import Header from "./Header";
-import About from "./About";
 import "./Home.css";
 
 const Home = ({ history }) => {
@@ -34,8 +33,9 @@ const Home = ({ history }) => {
           </div>
         </>
       ) : (
-        <div className="container_map" style={{ margin: "100px" }}>
-          <h1>HOME</h1>
+        <div className="container_map">
+        
+          <h1 style={{ margin: "100px" }}>HOME</h1>
         </div>
       )}
     </>

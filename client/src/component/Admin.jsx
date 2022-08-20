@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllUsers } from "../actions/userActions";
 import { DataGrid } from "@material-ui/data-grid";
+import Header from "./Header";
 
 const columns = [
   { field: "id", headerName: "User ID", minWidth: 80, flex: 0.4 },
@@ -68,8 +69,8 @@ const Admin = () => {
 
   return (
     <>
-      <div style={{ margin: "100px" }}>
-        <h1>Admin Can See All User</h1>
+      <div>
+        <h1 style={{ margin: "100px" }}>Admin Can See All User</h1>
 
         <div style={{ height: 400, width: "100%" }}>
           <DataGrid

@@ -20,7 +20,7 @@ import { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { updateProfile } from "../actions/userActions";
-
+import Header from "./Header";
 const theme = createTheme();
 
 const Userprofile = ({ history }) => {
