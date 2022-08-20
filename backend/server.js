@@ -5,6 +5,13 @@ const colors = require("colors");
 const userRoutes = require("./routes/userRoutes");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 const path = require("path");
+const cors = require("cors");
+
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+  })
+);
 
 dotenv.config();
 connectDB();
