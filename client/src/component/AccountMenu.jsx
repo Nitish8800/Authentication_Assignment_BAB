@@ -9,7 +9,7 @@ import IconButton from "@mui/material/IconButton";
 import { Link, useHistory } from "react-router-dom";
 import Typograhy from "@mui/material/Typography";
 import Tooltip from "@mui/material/Tooltip";
-
+import Admin from "./Admin";
 import Logout from "@mui/icons-material/Logout";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../actions/userActions";
@@ -108,11 +108,17 @@ export default function AccountMenu() {
         <Divider />
 
         {/* <Link to="/" style={{ textDecoration: "none", color: "inherit" }}> */}
-        <MenuItem onClick={AdminHandler}>
-          <ListItemIcon>
-            {userInfo && userInfo.isAdmin ? "Admin" : "User"}
-          </ListItemIcon>
-        </MenuItem>
+        <Link to="/admin" style={{ textDecoration: "none", color: "inherit" }}>
+          <MenuItem
+            onClick={AdminHandler}
+            style={{ color: "white", backgroundColor: "#3F51B5" }}
+          >
+            <ListItemIcon sx={{ m: "auto", color: "white" }}>
+              {userInfo && userInfo.isAdmin ? "Admin" : null}
+            </ListItemIcon>
+          </MenuItem>
+        </Link>
+        <Divider />
         <MenuItem onClick={logoutHandler}>
           <ListItemIcon>
             <Logout fontSize="small" />
