@@ -14,14 +14,26 @@ const columns = [
     flex: 0.5,
   },
   {
-    field: "name",
-    headerName: "Name",
+    field: "first_name",
+    headerName: "First Name",
+    minWidth: 150,
+    flex: 0.4,
+  },
+  {
+    field: "last_name",
+    headerName: "Last Name",
+    minWidth: 150,
+    flex: 0.4,
+  },
+  {
+    field: "phoneNumber",
+    headerName: "Phone Number",
     minWidth: 150,
     flex: 0.4,
   },
 
   {
-    field: "isAdmin" == true ? "Admin" : "User",
+    field: "isAdmin",
     headerName: "Role",
     minWidth: 150,
     flex: 0.3,
@@ -44,14 +56,15 @@ const Admin = () => {
     user.forEach((item) => {
       rows.push({
         id: item._id,
-        isAdmin: item.isAdmin,
+        isAdmin: item.isAdmin ? "Admin" : "User",
         email: item.email,
-        name: item.name,
+        last_name: item.last_name,
+        first_name: item.first_name,
         phoneNumber: item.phoneNumber,
       });
     });
 
-  console.log(rows);
+  // console.log(rows);
 
   return (
     <>
