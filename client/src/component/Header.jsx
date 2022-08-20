@@ -80,21 +80,16 @@ export default function Header() {
           <Typography variant="subtitle2">Home</Typography>
         </MenuItem>
       </Link>
-      <MenuItem>
-        <Typography variant="subtitle2" noWrap>
-          Techs
-        </Typography>
-      </MenuItem>
-      <MenuItem>
-        <Typography variant="subtitle2" noWrap>
-          Products
-        </Typography>
-      </MenuItem>
-      <MenuItem>
-        <Typography variant="subtitle2" noWrap>
-          Testimonials
-        </Typography>
-      </MenuItem>
+      <Link to="/about" style={{ textDecoration: "none", color: "inherit" }}>
+        <MenuItem>
+          <Typography variant="subtitle2">About</Typography>
+        </MenuItem>
+      </Link>
+      <Link to="/contact" style={{ textDecoration: "none", color: "inherit" }}>
+        <MenuItem>
+          <Typography variant="subtitle2">Contact</Typography>
+        </MenuItem>
+      </Link>
 
       {userInfo ? (
         <Link to="/login" style={{ textDecoration: "none", color: "inherit" }}>
@@ -133,8 +128,19 @@ export default function Header() {
             <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
               <Typography variant="subtitle2">Home</Typography>
             </Link>
-            <Typography variant="subtitle2">Techs</Typography>
-            <Typography variant="subtitle2">Product</Typography>
+            <Link
+              to="/about"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <Typography variant="subtitle2">About</Typography>
+            </Link>
+            <Link
+              to="/contact"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <Typography variant="subtitle2">Contact</Typography>
+            </Link>
+
             {userInfo ? (
               <Typography variant="subtitle2">
                 <AccountMenu />
