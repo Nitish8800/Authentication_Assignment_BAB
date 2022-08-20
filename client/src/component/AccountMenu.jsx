@@ -36,6 +36,9 @@ export default function AccountMenu() {
     dispatch(logout());
     history.push("/login");
   };
+  const AdminHandler = () => {
+    history.push("/admin");
+  };
 
   return (
     <React.Fragment>
@@ -94,7 +97,10 @@ export default function AccountMenu() {
         transformOrigin={{ horizontal: "right", vertical: "top" }}
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
-        <Link to="/profile" style={{ textDecoration: "none", color: "inherit" }}>
+        <Link
+          to="/profile"
+          style={{ textDecoration: "none", color: "inherit" }}
+        >
           <MenuItem>
             <Avatar alt="User" src={userInfo?.pic} /> My account
           </MenuItem>
@@ -102,6 +108,11 @@ export default function AccountMenu() {
         <Divider />
 
         {/* <Link to="/" style={{ textDecoration: "none", color: "inherit" }}> */}
+        <MenuItem onClick={AdminHandler}>
+          <ListItemIcon>
+            {userInfo && userInfo.isAdmin ? "Admin" : "User"}
+          </ListItemIcon>
+        </MenuItem>
         <MenuItem onClick={logoutHandler}>
           <ListItemIcon>
             <Logout fontSize="small" />

@@ -11,6 +11,7 @@ import AccountMenu from "./AccountMenu";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import { Link } from "react-router-dom";
 import Logout from "@mui/icons-material/Logout";
+import Login from "@mui/icons-material/Login";
 import Button from "@mui/material/Button";
 import { useDispatch, useSelector } from "react-redux";
 const useStyles = makeStyles((theme) => ({
@@ -122,7 +123,7 @@ export default function Header() {
       <AppBar position="fixed">
         <Toolbar className={classes.gridVersions}>
           <Typography variant="h6" className={classes.grow}>
-            Rimax Logo
+            AUTHENTICATION
           </Typography>
           <div className={classes.desktopVersion}>
             <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
@@ -154,9 +155,9 @@ export default function Header() {
                   size="medium"
                   variant="contained"
                   color="secondary"
-                  sx={{ backgroundColor: "red", fontWeight: "bold" }}
+                  sx={{ backgroundColor: "red", fontWeight: "bold", m: "5px" }}
                 >
-                  <Logout
+                  <Login
                     sx={{ color: "#ffff", fontWeight: "bold", p: "3px" }}
                   />
                   Login
