@@ -108,16 +108,21 @@ export default function AccountMenu() {
         <Divider />
 
         {/* <Link to="/" style={{ textDecoration: "none", color: "inherit" }}> */}
-        <Link to="/admin" style={{ textDecoration: "none", color: "inherit" }}>
-          <MenuItem
-            onClick={AdminHandler}
-            style={{ color: "white", backgroundColor: "#3F51B5" }}
+        {userInfo && userInfo.isAdmin ? (
+          <Link
+            to="/admin"
+            style={{ textDecoration: "none", color: "inherit" }}
           >
-            <ListItemIcon sx={{ m: "auto", color: "white" }}>
-              {userInfo && userInfo.isAdmin ? "Admin" : null}
-            </ListItemIcon>
-          </MenuItem>
-        </Link>
+            <MenuItem
+              onClick={AdminHandler}
+              style={{ color: "white", backgroundColor: "#3F51B5" }}
+            >
+              <ListItemIcon sx={{ m: "auto", color: "white" }}>
+                Admin
+              </ListItemIcon>
+            </MenuItem>
+          </Link>
+        ) : null}
         <Divider />
         <MenuItem onClick={logoutHandler}>
           <ListItemIcon>

@@ -1,13 +1,14 @@
 import React from "react";
 
-const About = () => {
+const Admin = () => {
   return (
     <>
       <div style={{ margin: "100px" }}>
-        <h1>About</h1>
+        <h1>Admin Can See All User</h1>
+        
       </div>
     </>
   );
 };
 
-export default About;
+export default Admin;

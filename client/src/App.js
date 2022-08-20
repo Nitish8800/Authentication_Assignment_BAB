@@ -6,6 +6,7 @@ import Header from "./component/Header";
 import Userprofile from "./component/Userprofile";
 import ErrorMessage from "./component/ErrorMessage";
 import About from "./component/About";
+import Admin from "./component/Admin";
 import Contact from "./component/Contact";
 import { BrowserRouter } from "react-router-dom";
 
@@ -19,8 +20,9 @@ function App() {
           <Route path="/login" component={Login} exact />
           <Route path="/register" component={Register} exact />
           <Route path="/profile" component={Userprofile} exact />
-          <Route path="/about" component={About} />
-          <Route path="/contact" component={Contact} />
+          <Route path="/about" component={About} exact />
+          <Route path="/contact" component={Contact} exact />
+          <Route path="/admin" component={Admin} exact />
           <Route path="/*" component={ErrorMessage} />
         </Switch>
       </BrowserRouter>
